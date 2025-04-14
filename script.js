@@ -2,8 +2,12 @@ var user = null;
 var flag = false;
 
 function setAlarm(){
-    user = document.getElementById("alarmTime").value;
-    if (user){
+    user = document.getElementById("alarmTime").value.trim();
+    if (!user){
+        var msg = "Set time at first"
+        document.getElementById("status").innerText = msg;
+    }
+    else{
         var msg = `Alarm Set for ${user}`;
         document.getElementById("status").innerText = msg;
         flag = true;
@@ -23,7 +27,7 @@ function waitTime(){
 
             });
             flag=false
-            alert("⏰ Alarm! Time's up!");
+            //alert("⏰ Alarm! Time's up!");
             var text=`✅ Alarm triggered at ${nowTime}`
             document.getElementById("status").innerText =text ;
             document.getElementById("alarmTime").value =null;
