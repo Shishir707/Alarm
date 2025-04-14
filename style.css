@@ -8,3 +8,23 @@ body{
     height: 100vh;
 }
 
+.container{
+    text-align: center;
+    background-color: #222;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20 rgba(red, green, blue, alpha);
+}
+
+input[type="time"]{
+    padding: 8px;
+    font-size: 16px;
+}
+
+button{
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
