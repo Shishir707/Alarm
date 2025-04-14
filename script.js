@@ -31,6 +31,8 @@ function waitTime(){
                 confirmButtonText:"OK"
 
             });
+            const beep = new Audio('beep.mp3');
+            beep.play();
             flag=false
             //alert("⏰ Alarm! Time's up!");
             var text=`✅ Alarm triggered at ${nowTime}`
