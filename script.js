@@ -4,8 +4,13 @@ var flag = false;
 function setAlarm(){
     user = document.getElementById("alarmTime").value.trim();
     if (!user){
-        var msg = "Set time at first"
-        document.getElementById("status").innerText = msg;
+        Swal.fire({
+            title: "❌ Opps!",
+            text: "Set time at first!",
+            icon:"Success",
+            confirmButtonText:"OK"
+
+        });
     }
     else{
         var msg = `Alarm Set for ${user}`;
