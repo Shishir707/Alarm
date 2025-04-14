@@ -1,21 +1,25 @@
+var user = null;
+var flag = false;
+
 function setAlarm(){
-    var user=document.getElementById("alarmTime").value ;
+    user = document.getElementById("alarmTime").value;
     if (user){
-        var msg=`Alarm Set for ${user}`
-        document.getElementById("status").innerText =msg ;
-        setAlarm= true;
+        var msg = `Alarm Set for ${user}`;
+        document.getElementById("status").innerText = msg;
+        flag = true;
     }
 }
 
-waitTime((){
-    if(setAlarm){
+function waitTime(){
+    if (flag){
         var now = new Date();
         var nowTime = now.toTimeString().slice(0,5);
-        if (nowTime==user){
+        if (nowTime == user){
             alert("⏰ Alarm! Time's up!");
-            setAlarm=false;
-            document.getElementById("status").innerText=""
-
+            flag = false;
+            document.getElementById("status").innerText ="";
         }
     }
-},1000);
+}
+
+setInterval(waitTime, 1000);
