@@ -26,6 +26,7 @@ function waitTime(){
             alert("⏰ Alarm! Time's up!");
             var text=`✅ Alarm triggered at ${nowTime}`
             document.getElementById("status").innerText =text ;
+            document.getElementById("alarmTime").value =null;
         }
     }
 }
