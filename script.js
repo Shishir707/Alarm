@@ -15,11 +15,20 @@ function waitTime(){
         var now = new Date();
         var nowTime = now.toTimeString().slice(0,5);
         if (nowTime == user){
+            Swal.fire({
+                title: "⏰ Alarm!",
+                text: "Time's up!",
+                icon:"Success",
+                confirmButtonText:"OK"
+
+            });
+            flag=false
             alert("⏰ Alarm! Time's up!");
-            flag = false;
-            document.getElementById("status").innerText ="";
+            var text=`✅ Alarm triggered at ${nowTime}`
+            document.getElementById("status").innerText =text ;
         }
     }
 }
 
 setInterval(waitTime, 1000);
+
